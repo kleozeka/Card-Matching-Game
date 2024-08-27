@@ -1,0 +1,47 @@
+body {
+  background-image: url("photo_solitaire.jpg");
+}
+
+* {
+  box-sizing: auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 95vw;
+}
+
+.wrapper > .one {
+  border-radius: 5px;
+  background-color: white;
+  padding: 1em;
+  width: auto;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper > .one img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.one img {
+  display: none;
+}
+
+.one.rotated img {
+  display: block;
+}
+
+.rotated {
+  transform: rotate(0deg);
+}

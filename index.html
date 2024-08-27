@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Link to the external CSS stylesheet for styling the page-->
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link to the external JavaScript file containing the game logic -->
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Action buttons sections-->
+
+    <div class="actions">
+
+        <!-- Button to restart the game, calling the restart() function when clicked-->
+        <button onclick="restart()">Restart</button>
+    </div>
+
+    <!-- Display the current score-->
+    <p>Score: <span class="score">0</span></p>
+
+    <!-- Wrapper div containing all the cards in the game-->
+    <div class="wrapper">
+
+        <!--Each card is represented as a div with a unique ID 
+        and an 'onclick' event to rotated the card-->
+        <div id='one' class="one sun" onclick="rotateCard(this.id, 'sun')">
+
+            <!--Image displayed on the card-->
+            <img src="sunImage.webp" alt="Example Image" class="image1">
+        </div>
+        <div id='two' class="one astronaut" onclick="rotateCard(this.id, 'astronaut')"><img src="astronautImage.jpg" alt="Example Image" class="image1"></div>
+        <div id='three' class="one cloud" onclick="rotateCard(this.id, 'cloud')"><img src="cloudImage.png" alt="Example Image" class="image1"></div>
+        <div id='four' class="one lightining"  onclick="rotateCard(this.id, 'lightining')"><img src="lightiningImage.png" alt="Example Image" class="image1"></div>
+        <div id='five' class="one moon"  onclick="rotateCard(this.id, 'moon')"><img src="moonImage.jpg" alt="Example Image" class="image1"></div>
+        <div id='six' class="one star"  onclick="rotateCard(this.id, 'star')"><img src="starImage.webp" alt="Example Image" class="image1"></div>
+       
+        <!--Additional cards with matching pairs-->
+        <div id='seven' class="one lightining" onclick="rotateCard(this.id, 'lightining')">
+            <img src="lightiningImage.png" alt="Example Image" class="image1">
+        </div>
+        <div id='eight' class="one class" onclick="rotateCard(this.id, 'cloud')"><img src="cloudImage.png" alt="Example Image" class="image1"></div>
+        <div id='nine' class="one astronaut" onclick="rotateCard(this.id, 'astronaut')"><img src="astronautImage.jpg" alt="Example Image" class="image1"></div>
+        <div id='ten' class="one sun"  onclick="rotateCard(this.id, 'sun')"><img src="sunImage.webp" alt="Example Image" class="image1"></div>
+        <div id='eleven' class="one star"  onclick="rotateCard(this.id, 'star')"><img src="starImage.webp" alt="Example Image" class="image1"></div>
+        <div id='twelve' class="one moon"  onclick="rotateCard(this.id, 'moon')"><img src="moonImage.jpg" alt="Example Image" class="image1"></div>
+       
+     
+</body>
+
+</html>
