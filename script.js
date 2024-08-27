@@ -8,7 +8,7 @@
   * and updates its text content to reflect the current score
   */
  function updateScore(){
-    document.querySelector('.score').textContent = score;
+    document.getElementById('score').textContent = score;
  }
 
  /**
@@ -43,6 +43,7 @@
   */
 
 function rotateCard(id, image) {
+    debugger
     let imageToSpin = document.getElementById(id);
     let foundItems = document.getElementsByClassName("found");
     let rotatedItems = document.getElementsByClassName("rotated");
@@ -61,7 +62,7 @@ function rotateCard(id, image) {
     if(!idFound){
         if(rotatedItems.length > 0){
             Array.prototype.slice.call(rotatedItems)?.forEach(function(element) {
-                if(element.classList.contains(image))
+                if(element.classList.contains(image) && element.id !== id)
                 {
                     element.classList.add('found');
                     imageToSpin.classList.add('found');

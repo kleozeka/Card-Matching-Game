@@ -46,3 +46,6 @@ body {
   transform: rotate(0deg);
 }
 
+.score{
+  color: white;
+}
