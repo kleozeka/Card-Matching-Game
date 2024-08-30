@@ -6,7 +6,18 @@ body {
   box-sizing: auto;
 }
 
-.wrapper {
+.wrapper,
+.congrats{
+  display: none;
+  
+}
+
+.congrats.active {
+  display: flex;
+
+}
+
+.wrapper.active {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, auto);
@@ -48,4 +59,10 @@ body {
 
 .score{
   color: white;
+}
+.congrats.active {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

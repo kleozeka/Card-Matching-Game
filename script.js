@@ -6,25 +6,43 @@
   * Update the score displayed on the screen.
   * It selects the HTML element with the class 'score'
   * and updates its text content to reflect the current score
+  * When the score reaches 6, the game is over, so the wrapper (game board) is hidden,
+  *  and the congrats message is shown.
   */
  function updateScore(){
     document.getElementById('score').textContent = score;
+    let wrapper = document.getElementById('wrapper');
+    let congrats = document.getElementById('congrats');
+
+    if(score === 6){
+        wrapper.classList.toggle('active');
+        congrats.classList.toggle('active');
+
+    }
  }
 
  /**
   * Resets the game by:
   * - Setting the score back to 0 and updating the displayed score.
   * - Removing the 'found' and 'rotated' classes from all the card
-  * elements with the class 'one' 
+  *   elements with the class 'one' 
+  * - The game resets completely, and the "Congrats" message is hidden,
+  *  allowing the player to start a new game.
   */
 
  function restart(){
     score = 0;
     updateScore();
+    const wrapper = document.getElementById('wrapper');
+    const congrats = document.getElementById('congrats');
+
+    wrapper.classList.add('active');
+    congrats.classList.remove('active');
+
     const cards = document.querySelectorAll('.one');
     cards.forEach(card => {
         card.classList.remove('found', 'rotated');
-    });
+    });    
  }
 
  /**
@@ -43,7 +61,6 @@
   */
 
 function rotateCard(id, image) {
-    debugger
     let imageToSpin = document.getElementById(id);
     let foundItems = document.getElementsByClassName("found");
     let rotatedItems = document.getElementsByClassName("rotated");
@@ -68,6 +85,7 @@ function rotateCard(id, image) {
                     imageToSpin.classList.add('found');
                     score ++;
                     updateScore();
+                  
                 }else{
                     if(!element.classList.contains('found'))
                         element.classList.toggle('rotated');
